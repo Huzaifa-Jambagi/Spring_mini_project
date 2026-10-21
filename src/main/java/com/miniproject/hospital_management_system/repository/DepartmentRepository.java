@@ -1,4 +1,7 @@
 package com.miniproject.hospital_management_system.repository;
 
-public interface DepartmentRepository extends org.springframework.data.jpa.repository.JpaRepository<com.miniproject.hospital_management_system.models.Department, java.lang.Long> {
+import com.miniproject.hospital_management_system.models.Department;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DepartmentRepository extends JpaRepository<Department, Long> {
 }

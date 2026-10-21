@@ -33,7 +33,6 @@ public class Insurance {
     @Column(nullable = false,updatable = false)
     private LocalDateTime createdAt;
 
-    @Column(nullable = false)
     @OneToOne(mappedBy ="insurance")
     private Patients patient;
 

@@ -1,6 +1,7 @@
 package com.miniproject.hospital_management_system.models;
 
 import com.miniproject.hospital_management_system.models.enums.BloodGroup;
+import com.miniproject.hospital_management_system.models.enums.Gender;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,6 +16,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "patients")
 public class Patients {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,12 +25,17 @@ public class Patients {
     @Column(nullable = false)
     private String name;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Gender gender;
+
     @Column(nullable = false)
     private LocalDate BirthDate;
 
     @Column(nullable = false)
     private  String email;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private BloodGroup bloodGroup;
 
